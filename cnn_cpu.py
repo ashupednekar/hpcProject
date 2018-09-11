@@ -1,9 +1,6 @@
-"""
-Created on Thu Mar 22 22:18:53 2018
-
-@author: Muhammed Buyukkinaci
-"""
-import cv2#reading and resizing                 
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages')
+    import cv2#reading and resizing
 import numpy as np#arrays         
 import os#dealing with directories                  
 from random import shuffle #to shuffle data
@@ -42,6 +39,7 @@ train_data = np.load('train_data_mc.npy')
 test_data = np.load('test_data_mc.npy')
 
 #In order to implement ALEXNET, we are resizing them to (227,227,3)
+
 for i in range(len(train_data)):
     train_data[i][0] = cv2.resize(train_data[i][0],(IMG_SIZE_ALEXNET,IMG_SIZE_ALEXNET))
 
